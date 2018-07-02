@@ -1,4 +1,28 @@
-class MovieDetails extends Movies {
+//global api variable with api value
+const dapiUrl='https://ancient-caverns-16784.herokuapp.com/movies';
+/* Initiating the Movie class with its constructor
+The constuctor will get the data parameter which will be given in another files class method */
+
+class Movie {
+  constructor(data){
+    this._id=data._id
+    this.Title=data.Title;
+    this.Year=data.Year;
+    this.Runtime=data.Runtome;
+    this.Genre=data.Genre;
+    this.Language=data.Language;
+    this.Country=data.Country;
+    this.Poster=data.Poster;
+    this.imdbRating=data.imdbRating;
+    this.imdbVotes=data.imdbVotes;
+    this.imdbID=data.imdbID;
+    this.Type=data.Type;
+  }
+  
+}
+
+
+class MovieDetails extends Movie {
    	constructor() {
    		super();
    		this.Rated= "";

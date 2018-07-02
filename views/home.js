@@ -1,10 +1,13 @@
 window.onload=Onloaded;
 
+
+
 function Onloaded(){
 	const viewData=new Movies();
 	viewData.getMovies()
 	.then(createMovieList)
 	.catch();
+
 
 
 function createMovieList(){
@@ -25,6 +28,10 @@ function createMovieList(){
 			containElements.appendChild(title);
 		}
 	}
+	
+
 
 }
+
+
 

@@ -18,6 +18,7 @@ function createMovieList(){
 			var picture=document.createElement('img');
 			picture.setAttribute('src',item.Poster);
 			picture.setAttribute('alt','404');
+			picture.setAttribute('width','200px');
 			picture.classList.add('img-size');
 
 			containElements.appendChild(picture);

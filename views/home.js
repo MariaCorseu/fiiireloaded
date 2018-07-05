@@ -24,7 +24,7 @@ function createMovieList(){
 
 
 			const title=document.createElement("a");
-			title.setAttribute('href','file:///C:/final-project/fiiireloaded/pages/movieDetails.html?movieId='+item._id);
+			title.setAttribute('href', basePath + '/pages/movieDetails.html?movieId='+item._id);
 			title.setAttribute('target','blank');
 			title.innerHTML=item.Title+'<br>';
 

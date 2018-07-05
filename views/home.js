@@ -51,7 +51,26 @@ function createMovieList(){
 		})
 	//validare(daca exista userul sau daca se potriveste parola cu usenameul)
 	//la logare sa apara butoanele de edit, delete, create.(daca nu e tokenul in locale storage sa fie butoanele hide)
+	
+	//Add Movie 
+	const addMovieButton = document.querySelector("[name='addMovie']");
+	addMovieButton.addEventListener("click", (event) => {
+		const title = document.querySelector("[name='titleCreate']").innerHTML;
+		const year = document.querySelector("[name='yearCreate']").innerHTML;
+		const type = document.querySelector("[name='typeCreate']").innerHTML;
+		const imageUrl = document.querySelector("[name='posterCreate']").innerHTML;
+
+		const movieAddData = {
+			title:title,
+			year:year,
+			type:type,
+			poster:imageUrl,
+		}
+
+		const movieAdded = new Movie(movieAddData);
+		movieAdded.addMovie(movieAddData);
 	})
+})
 }
 
 

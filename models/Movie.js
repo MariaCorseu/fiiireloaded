@@ -19,6 +19,19 @@ class Movie {
     this.Type="";
   }
   
+  addMovie(data) {
+    return $.ajax(dapiUrl, {
+    method:"POST",
+    data: data,
+    success:(response) => {
+      console.log(response);
+      location.reload(true);
+    },
+    error:(xhr) => {
+      alert("Something went wrong adding new movie");
+      console.log("Error", xhr);
+    }
+  })
 }
 
 
@@ -77,17 +90,6 @@ class MovieDetails extends Movie {
     })
   }
 
-  addMovie(data) {
-    return $.ajax(dapiUrl,
-    method:"POST",
-    data: data,
-    success:(response) => {
-      console.log(response);
-    },
-    error:(xhr) => {
-      alert("Something went wrong adding new movie");
-      console.log("Error", xhr);
-    }
-  )}
+
 }
     

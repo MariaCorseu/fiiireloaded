@@ -25,8 +25,10 @@
 
 		<form> 
 		  <div class="container">
-		  	<a href="#"><h1 onclick="hiddenLogin()">Log In</h1></a>
+		  	<button class="btn" onclick="hiddenLogin()">Log in</button>
+		  	<!-- <a href="#"><h1 onclick="hiddenLogin()">Log In</h1></a> -->
 		  	<div id="login">
+		  		<hr>
 			    <label for="uname"><b>Username</b></label>
 			    <input type="text" placeholder="Enter Username" name="uname" required>
 			    <label for="psw"><b>Password</b></label>
@@ -37,12 +39,13 @@
 	
 		<form>
 		  <div class="container">
-		  	<a onclick="hiddenRegister()" href="#"><h1>Register Now</h1></a>
+		  	<button class="btn" onclick="hiddenRegister()">Register now</button>
+		  	<!-- <a onclick="hiddenRegister()" href="#"><h1>Register Now</h1></a> -->
 		  	<div id="register">
-			    <p>Please fill in this form to create an account.</p>
+			    <!-- <p>Please fill in this form to create an account.</p> -->
 			    <hr>
 				<label for="username"><b>Username</b></label>
-				<input type="text" name="username" value="" placeholder="userrname" required>
+				<input type="text" name="username" value="" placeholder="Enter Username" required>
 				<label for="email"><b>Email</b></label>
 		    <input type="text" placeholder="Enter Email" name="email" required>
 		    <label for="psw"><b>Password</b></label>
@@ -61,7 +64,7 @@
 		</form>
 	</header>		
 	<div id="container"></div>
-	<footer style="border:1px solid #ccc;">
+	<footer>
 		<p>© 2018 - Fiii Ploii bestDevelopmentTeam | All rights reserved.</p>
 		<p>Contact information: <a href="mailto:someone@example.com">
 		fiiiPloii@siit.com</a>.</p>

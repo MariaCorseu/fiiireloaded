@@ -9,7 +9,7 @@ class Movies {
 		return $.ajax(apiUrl,{
 				method:'GET',
 				success:(e)=>{
-					console.log(e);
+					//console.log(e);
 					for(let i=0;i<e.results.length;i++){
 						const item=e.results[i];
 						const data={
@@ -27,9 +27,15 @@ class Movies {
 							Type:item.Type
 						}
 						//here we create the new object trough the previously created Movie class
+
+						//const movieModel=new Movie(data);
+						//console.log(movieModel);
+						this.itemList.push(data);
+
 						const movieModel=new Movie(data);
-						console.log(movieModel);
+						//console.log(movieModel);
 						this.itemList.push(movieModel);
+
 					}
 				},
 				error:(xhr)=>{

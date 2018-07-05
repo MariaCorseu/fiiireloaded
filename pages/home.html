@@ -11,13 +11,18 @@
     <script type="text/javascript" src="../models/Movie.js"></script>
     <script type="text/javascript" src="../models/MovieList.js"></script>
 	<script type="text/javascript" src="../views/home.js"></script>
+	<script type="text/javascript" src="../models/Auth.js"></script>
 </head>
 <body>
 	<header>		
 		<div class="container">						
 			<form>
 				<img src="../images/IMDb_icon.png" alt="IMDb_icon" height="auto" width="10%">
+<<<<<<< HEAD
 				<input type="text" placeholder="Find Movies, TV shows, Celebrities and more..." size="100%" id="searchBar" autocomplete="off">
+=======
+				<input type="text" placeholder="Find Movies, TV shows, Celebrities and more..." size="100%">
+>>>>>>> 3e120e8469faef73410e4e3ca810c91edba75cf7
 				<button id="navbar-submit-button" type="submit"><span><i class="material-icons">search</i></span></button>
 			</form>
 		</div>
@@ -31,7 +36,7 @@
 		    <label for="psw"><b>Password</b></label>
 		    <input type="password" placeholder="Enter Password" name="psw" required>
 
-		    <button type="submit">Login</button>
+		    <button type="submit" name="login">Login</button>
 		    <label>
 		      <input type="checkbox" checked="checked" name="remember"> Remember me
 		    </label>
@@ -75,14 +80,11 @@
 		  </div>
 		</form>
 	</header>
-	 
-	<div id="container" style="padding-bottom: 60px;">
 		
-	</div>
+	<div id="container"></div>
+		 
 
-
-	<div class="container" style="margin: 10px;">
-	</div>
+	
 	<footer style="border:1px solid #ccc;">
 		<p>© 2018 - Fiii Ploii bestDevelopmentTeam | All rights reserved.</p>
 		<p>Contact information: <a href="mailto:someone@example.com">

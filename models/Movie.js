@@ -22,18 +22,20 @@ class Movie {
   
   addMovie(data) {
     return $.ajax(dapiUrl, {
-    method:"POST",
-    data: data,
-    success:(response) => {
-      console.log(response);
-      location.reload(true);
-    },
-    error:(xhr) => {
-      alert("Something went wrong adding new movie");
-      console.log("Error", xhr);
-    }
-  })
-}
+      headers: {
+        'X-Auth-Token' : token
+      },
+      method:"POST",
+      data: data,
+      success:(response) => {
+        console.log(response);
+      },
+      error:(xhr) => {
+        alert("Something went wrong adding new movie");
+        console.log("Error", xhr);
+      }
+    })
+  }
 
 }
 

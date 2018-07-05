@@ -28,7 +28,8 @@ function createMovieList(){
 			containElements.appendChild(title);
 		}
 	}
-	
+	//Log In functionality
+	//Submit button
 	const loginButton = document.querySelector("[name='login']");
 	loginButton.addEventListener("click", (event) => {
 		event.preventDefault();
@@ -44,13 +45,15 @@ function createMovieList(){
 		currentUserLogin.sendLoginData(dataUser).then((response) => {
 			console.log(response);
 			let accessToken = response.accessToken;
-			console.log(accessToken);
-			document.cookie = 'loginToken=${accessToken}';
-			console.log(document.cookie);
+			console.log("RESPONSE TOKEN = ",accessToken);
+			localStorage.setItem('loginToken', accessToken);
+			console.log("LOCAL STORAGE TOKEN = ",localStorage.loginToken);
 		})
+	//validare(daca exista userul sau daca se potriveste parola cu usenameul)
+	//la logare sa apara butoanele de edit, delete, create.(daca nu e tokenul in locale storage sa fie butoanele hide)
 	})
-
 }
+
 
 
 

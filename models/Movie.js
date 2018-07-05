@@ -4,74 +4,74 @@ const dapiUrl='https://ancient-caverns-16784.herokuapp.com/movies';
 The constuctor will get the data parameter which will be given in another files class method */
 
 class Movie {
-  constructor(data){
-    this._id=data._id
-    this.Title=data.Title;
-    this.Year=data.Year;
-    this.Runtime=data.Runtome;
-    this.Genre=data.Genre;
-    this.Language=data.Language;
-    this.Country=data.Country;
-    this.Poster=data.Poster;
-    this.imdbRating=data.imdbRating;
-    this.imdbVotes=data.imdbVotes;
-    this.imdbID=data.imdbID;
-    this.Type=data.Type;
+  constructor(){
+    this._id=null;
+    this.Title="";
+    this.Year=null;
+    this.Runtime="";
+    this.Genre="";
+    this.Language="";
+    this.Country="";
+    this.Poster="";
+    this.imdbRating=null;
+    this.imdbVotes=null;
+    this.imdbID="";
+    this.Type="";
+
   }
   
 }
 
 
-class MovieDetails extends Movie {
-   	constructor() {
-   		super();
-   		this.Rated= "";
-  		this.Released= "";
-   		this.Writer= "";
-   		this.Actors= "";
-      this.Plot= "";
-		  this.Awards= "";
-      this.Ratings= [];
-		  this.Metascore= null;
-  		this.DVD= "";
-   		this.BoxOffice= "";
-   		this.Production= "";
-      this.Website= "";
-      this.Response= "";
-   	}
-
-    fetchData() {
-      return $.ajax("https://ancient-caverns-16784.herokuapp.com/movies/" + "5b04857e5ab76700217bfaac", {
+class MovieDetails extends Movie{
+  constructor(){
+    super();
+    this.Rated="";
+    this.Released="";
+    this.Writer="";
+    this.Actors="";
+    this.Plot="";
+    this.Awards="";
+    this.Ratings=[];
+    this.Metascore=null;
+    this.DVD="";
+    this.BoxOffice="";
+    this.Production="";
+    this.Website="";
+    this.Response="";
+  }
+  fetchData(id) {
+      return $.ajax("https://ancient-caverns-16784.herokuapp.com/movies/" + id, {
       method:"GET",
-      success: (data) => {
-        this._id= data._id;
-        this.Title= data.Title;
-        this.Year= data.Year;
-        this.Runtime= data.Runtime;
-        this.Genre= data.Genre;
-        this.Language= data.Language;
-        this.Country= data.Country;
-        this.Poster= data.Poster;
-        this.imdbRating= data.imdbRating;
-        this.imdbVotes= data.imdbVotes;
-        this.imdbID= data.imdbID;
-        this.Type= data.Type;
-        this.Rated= data.Rated;
-        this.Released= data.Released;
-        this.Writer= data.Writer;
-        this.Actors= data.Actors;
-        this.Plot= data.Plot;
-        this.Awards= data.Awards;
-        this.Ratings= data.Ratings;
-        this.Metascore= data.Metascore;
-        this.DVD= data.DVD;
-        this.BoxOffice= data.BoxOffice;
-        this.Production= data.Production;
-        this.Website= data.Website;
-        this.Response= data.Response;
+      success: (res) => {
+        console.log(res);
+        this._id=res._id;
+        this.Title=res.Title;
+        this.Year=res.Year;
+        this.Runtime=res.Runtime;
+        this.Genre=res.Genre;
+        this.Language=res.Language;
+        this.Country=res.Country;
+        this.Poster=res.Poster;
+        this.imdbRating=res.imdbRating;
+        this.imdbVotes=res.imdbVotes;
+        this.imdbID=res.imdbID;
+        this.Type=res.Type;
+        this.Rated=res.Rated;
+        this.Released=res.Released;
+        this.Writer=res.Writer;
+        this.Actors=res.Actors;
+        this.Plot=res.Plot;
+        this.Awards=res.Awards;
+        this.Ratings=res.Ratings;
+        this.Metascore=res.Metascore;
+        this.DVD=res.DVD;
+        this.BoxOffice=res.BoxOffice;
+        this.Production=res.Production;
+        this.Website=res.Website;
+        this.Response=res.Response;
         },
       error: (xhr) => {
-        alert("Something went wrong when fetching MovieDetails");
         console.log("Error", xhr);
       }
     })

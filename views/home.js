@@ -33,7 +33,4 @@ function hiddenRegister() {
 
 function hiddenLogin() {
     document.getElementById("login").style.display = "block";
-
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
 }

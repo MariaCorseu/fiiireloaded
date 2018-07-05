@@ -29,7 +29,26 @@ function createMovieList(){
 		}
 	}
 	
-	
+	const loginButton = document.querySelector("[name='login']");
+	loginButton.addEventListener("click", (event) => {
+		event.preventDefault();
+		console.log(event.target);
+		const userName = document.querySelector("[name='uname']").value;
+		const password = document.querySelector("[name='psw']").value;
+		const dataUser = {
+			username:userName,
+			password:password,
+		};
+		const currentUserLogin = new User(dataUser); 
+		console.log(currentUserLogin);
+		currentUserLogin.sendLoginData(dataUser).then((response) => {
+			console.log(response);
+			let accessToken = response.accessToken;
+			console.log(accessToken);
+			document.cookie = 'loginToken=${accessToken}';
+			console.log(document.cookie);
+		})
+	})
 
 }
 

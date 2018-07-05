@@ -9,7 +9,7 @@ class Movies {
 		return $.ajax(apiUrl,{
 				method:'GET',
 				success:(e)=>{
-					console.log(e);
+					//console.log(e);
 					for(let i=0;i<e.results.length;i++){
 						const item=e.results[i];
 						const data={

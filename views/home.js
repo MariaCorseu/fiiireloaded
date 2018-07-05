@@ -3,21 +3,11 @@ window.onload=Onloaded;
 
 
 function Onloaded(){
-	const logoutUser=new User();
-	logoutUser.SendLogoutData()
-	.then(userLogout)
-	.catch(logoutError);
-
-
 	const viewData=new Movies();
 	viewData.getMovies()
 	.then(createMovieList)
 	.catch(CreateMovieListError);
 
-
-function userLogout(){
-	
-}
 
 
 function createMovieList(){
@@ -100,10 +90,6 @@ function createMovieList(){
 
 function CreateMovieListError(xhr){
 	console.log("error",xhr);
-}
-
-function logoutError(xhr){
-	console.log("Error : ",xhr);
 }	
 
 }

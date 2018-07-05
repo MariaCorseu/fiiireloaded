@@ -3,6 +3,10 @@ window.onload=Onloaded;
 
 
 function Onloaded(){
+	const logoutUser=new User();
+	console.log(logoutUser);
+
+
 	const viewData=new Movies();
 	viewData.getMovies()
 	.then(createMovieList)

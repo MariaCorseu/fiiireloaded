@@ -4,7 +4,9 @@ window.onload=Onloaded;
 
 function Onloaded(){
 	const logoutUser=new User();
-	console.log(logoutUser);
+	logoutUser.SendLogoutData()
+	.then(userLogout)
+	.catch(logoutError);
 
 
 	const viewData=new Movies();
@@ -12,6 +14,10 @@ function Onloaded(){
 	.then(createMovieList)
 	.catch(CreateMovieListError);
 
+
+function userLogout(){
+	
+}
 
 
 function createMovieList(){
@@ -94,6 +100,10 @@ function createMovieList(){
 
 function CreateMovieListError(xhr){
 	console.log("error",xhr);
+}
+
+function logoutError(xhr){
+	console.log("Error : ",xhr);
 }	
 
 }

@@ -34,6 +34,7 @@ class Movie {
     }
   })
 }
+
 }
 
 class MovieDetails extends Movie{
@@ -89,7 +90,5 @@ class MovieDetails extends Movie{
       }
     })
   }
-
-
 }
     

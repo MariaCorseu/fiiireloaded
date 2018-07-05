@@ -1,10 +1,14 @@
+#container {
+    background-image: url('https://i.pinimg.com/originals/d3/f3/8b/d3f38b3264c9f847840c6a56673c87a1.jpg');
+    color: white;
 
+}
 footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 12%;
+    height: 4%;
     background-color: #f5de50;
     color: white;
     text-align: center;
@@ -21,7 +25,7 @@ footer {
 
 
 .img-size{
-	width:50%;
+	width:22%;
 	height:auto;
 }
 

@@ -8,3 +8,11 @@ footer {
     color: white;
     text-align: center;
 }
+
+#register {
+	display:none;
+}
+
+#login {
+	display:none;
+}

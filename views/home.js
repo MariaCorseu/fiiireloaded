@@ -27,3 +27,10 @@ function createMovieList(){
 
 }
 
+function hiddenRegister() {
+    document.getElementById("register").style.display = "block";
+}
+
+function hiddenLogin() {
+    document.getElementById("login").style.display = "block";
+}

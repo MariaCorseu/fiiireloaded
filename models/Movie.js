@@ -29,6 +29,8 @@ class Movie {
       data: data,
       success:(response) => {
         console.log(response);
+        alert("Movie was succesfully added!");
+        location.reload(true);
       },
       error:(xhr) => {
         alert("Something went wrong adding new movie");

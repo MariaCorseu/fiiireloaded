@@ -17,11 +17,11 @@ class Movie {
     this.imdbVotes=null;
     this.imdbID="";
     this.Type="";
-   	
-   	}
 
-    
+  }
+  
 }
+
 
 class MovieDetails extends Movie{
   constructor(){

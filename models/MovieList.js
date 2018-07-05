@@ -27,9 +27,15 @@ class Movies {
 							Type:item.Type
 						}
 						//here we create the new object trough the previously created Movie class
+
+						//const movieModel=new Movie(data);
+						//console.log(movieModel);
+						this.itemList.push(data);
+
 						const movieModel=new Movie(data);
 						//console.log(movieModel);
 						this.itemList.push(movieModel);
+
 					}
 				},
 				error:(xhr)=>{

@@ -1,120 +1,129 @@
- window.onload = (() => {
- 	const currentMovie = new MovieDetails();
+window.onload=function(){
+	//declaring a new object for the movie details
+	const currentMovie=new MovieDetails();
+	//using an id parameter from code below
+	const currentPostId=getUrlParameter('movieId');
+	console.log(currentPostId);
+	//making the promise chain
+		currentMovie.fetchData(currentPostId)
+		.then(createDetails)
+		.catch(errorMsg);
 
-	currentMovie.fetchData().then((response) => {
-		console.log(response);
 
-		const movieDetailsContainer = document.getElementById("movieDetailsContainer");
+		function createDetails(){
+			console.log(currentMovie);
+			//getting the container element
+			const postDetailsContainer=document.getElementById('movieDetailsContainer');
+			//creating the elements for display
+			const postTitle=document.createElement('h3');
+			postTitle.innerHTML=currentMovie.Title;
 
-		//append Title
-		const movieTitle = document.createElement("h1");
-		movieTitle.innerHTML = response.Title;
-		movieDetailsContainer.appendChild(movieTitle);
+			const postPoster=document.createElement('img');
+			postPoster.setAttribute('src',currentMovie.Poster);
+			postPoster.classList.add('img-size');
 
-		//append Year
-	    const movieYear = document.createElement("p");
-		movieYear.innerHTML = "Year: " + response.Year;
-		movieDetailsContainer.appendChild(movieYear);
+			const postPlot=document.createElement('p');
+			postPlot.innerHTML=currentMovie.Plot;
+			
+			const postActors=document.createElement('p');
+			postActors.innerHTML=currentMovie.Actors;
+			
+			const postAwards=document.createElement('p');
+			postAwards.innerHTML=currentMovie.Awards;
 
-		//append Rate
-		const movieRate = document.createElement("p");
-		movieRate.innerHTML = "Rate: " + response.Rated;
-		movieDetailsContainer.appendChild(movieRate);
+			const postRuntime=document.createElement('p');
+			postRuntime.innerHTML=currentMovie.Runtime;
 
-		//append Release date
-		const movieRelased = document.createElement("p");
-		movieRelased.innerHTML = "Release Date: " + response.Released;
-		movieDetailsContainer.appendChild(movieRelased);
+			const postCountry=document.createElement('p');
+			postCountry.innerHTML=currentMovie.Country;
 
-		//append Runtime
-		const movieRuntime = document.createElement("p");
-		movieRuntime.innerHTML = "Runtime: " + response.Runtime;
-		movieDetailsContainer.appendChild(movieRuntime);
+			const postProduction=document.createElement('p');
+			postProduction.innerHTML=currentMovie.Production;
 
-		//append Genre
-		const movieGenre = document.createElement("p");
-		movieGenre.innerHTML = "Genre: " + response.Genre;
-		movieDetailsContainer.appendChild(movieGenre);
+			const postGenre=document.createElement('p');
+			postGenre.innerHTML=currentMovie.Genre;
 
-		// append Writer
-		const movieWriter = document.createElement("p");
-		movieWriter.innerHTML = "Writer: " + response.Writer;
-		movieDetailsContainer.appendChild(movieWriter);
+			const postLanguage=document.createElement('p');
+			postLanguage.innerHTML=currentMovie.Language;
 
-		//append Actors
-		const movieActors = document.createElement("p");
-		movieActors.innerHTML = "Actors: " + response.Actors;
-		movieDetailsContainer.appendChild(movieActors);
+			const postMetascore=document.createElement('p');
+			postMetascore.innerHTML=currentMovie.Metascore;
 
-		//append Plot
-		const moviePlot = document.createElement("p");
-		moviePlot.innerHTML = "Plot: " + response.Plot;
-		movieDetailsContainer.appendChild(moviePlot);
+			const postRated=document.createElement('p');
+			postRated.innerHTML=currentMovie.Rated;
 
-		//append Language
-		const movieLanguage = document.createElement("p");
-		movieLanguage.innerHTML = "Language: " + response.Language;
-		movieDetailsContainer.appendChild(movieLanguage); 
+			const postReleased=document.createElement('p');
+			postReleased.innerHTML=currentMovie.Released;
 
-		//append Country
-		const movieCountry = document.createElement("p");
-		movieCountry.innerHTML = "Country: " + response.Country;
-		movieDetailsContainer.appendChild(movieCountry);
+			const postType=document.createElement('p');
+			postType.innerHTML=currentMovie.Type;
 
-		//append Awards
-		const movieAwards = document.createElement("p");
-		movieAwards.innerHTML = "Awards: " + response.Awards;
-		movieDetailsContainer.appendChild(movieAwards);
+			const postYear=document.createElement('p');
+			postYear.innerHTML=currentMovie.Year;
 
-		//append Poster(img)
-		const moviePoster = document.createElement("img");
-		moviePoster.setAttribute("src",response.Poster);
-		movieDetailsContainer.appendChild(moviePoster);
+			const postBoxOffice=document.createElement('p');
+			postBoxOffice.innerHTML=currentMovie.BoxOffice;
 
-		//append Metascore
-		const movieMetascore = document.createElement("p");
-		movieMetascore.innerHTML = "Metascore: " + response.Metascore;
-		movieDetailsContainer.appendChild(movieMetascore); 
+			const postDVD=document.createElement('p');
+			postDVD.innerHTML=currentMovie.DVD;
 
-		//append Imdb Rating
-		const movieImdbRating = document.createElement("p");
-		movieImdbRating.innerHTML = "Imdb Rating: " + response.imdbRating;
-		movieDetailsContainer.appendChild(movieImdbRating); 
+			const postimdbRating=document.createElement('p');
+			postimdbRating.innerHTML=currentMovie.imdbRating;
 
-		//append Imdb Votes
-		const movieImdbVotes = document.createElement("p");
-		movieImdbVotes.innerHTML = "Imdb Votes: " + response.imdbVotes;
-		movieDetailsContainer.appendChild(movieImdbVotes);
+			const postimdbVotes=document.createElement('p');
+			postimdbVotes.innerHTML=currentMovie.imdbVotes;
 
-		//append Imdb Id
-		const movieImdbId = document.createElement("p");
-		movieImdbId.innerHTML = "Imdb ID: " + response.imdbId;
-		movieDetailsContainer.appendChild(movieImdbId);
+			const postWebsite=document.createElement('a');
+			postWebsite.setAttribute('href',currentMovie.Website);
+			postWebsite.setAttribute('target','blank');
+			postWebsite.innerHTML=currentMovie.Website+'<br>';
 
-		//append Type
-		const movieType = document.createElement("p");
-		movieType.innerHTML = "Type: " + response.Type;
-		movieDetailsContainer.appendChild(movieType);
 
-		//append Dvd
-		const movieDvd = document.createElement("p");
-		movieDvd.innerHTML = "Dvd: " + response.DVD;
-		movieDetailsContainer.appendChild(movieDvd);
+			
+			//attaching the created elements for display
+			postDetailsContainer.appendChild(postTitle);
+			postDetailsContainer.appendChild(postPoster);
+			postDetailsContainer.appendChild(postPlot);
+			postDetailsContainer.appendChild(postType);
+			postDetailsContainer.appendChild(postActors);
+			postDetailsContainer.appendChild(postAwards);
+			postDetailsContainer.appendChild(postBoxOffice);
+			postDetailsContainer.appendChild(postYear);
+			postDetailsContainer.appendChild(postRuntime);
+			postDetailsContainer.appendChild(postDVD);
+			postDetailsContainer.appendChild(postCountry);
+			postDetailsContainer.appendChild(postProduction);
+			postDetailsContainer.appendChild(postGenre);
+			postDetailsContainer.appendChild(postLanguage);
+			postDetailsContainer.appendChild(postMetascore);
+			postDetailsContainer.appendChild(postRated);
+			postDetailsContainer.appendChild(postReleased);
+			postDetailsContainer.appendChild(postimdbRating);
+			postDetailsContainer.appendChild(postimdbVotes);
+			postDetailsContainer.appendChild(postWebsite);
 
-		//append BoxOffice
-		const movieBoxOffice = document.createElement("p");
-		movieBoxOffice.innerHTML = "BoxOffice: " + response.BoxOffice;
-		movieDetailsContainer.appendChild(movieBoxOffice); 
+			//complex code for aan array to display the objects from within
+			let postRates="";
+			const postRatings=document.createElement('div');
+			for(let i=0;i<currentMovie.Ratings.length;i++){
+			postRates += "<ul>"+"<li>"+currentMovie.Ratings[i].Source+":"+
+				currentMovie.Ratings[i].Value+"</li>"+"</ul>";
+			}
+			postRatings.innerHTML=postRates;
+			postDetailsContainer.appendChild(postRatings);
+				
+		}
 
-		//append Production
-		const movieProduction = document.createElement("p");
-		movieProduction.innerHTML = "Production: " + response.Production;
-		movieDetailsContainer.appendChild(movieProduction); 
+		function errorMsg(xhr){
+			console.log('Something happened:',xhr);
+		}
 
-		//append Website
-		const movieWebsite = document.createElement("p");
-		movieWebsite.innerHTML = "Website: " + response.Website;
-		movieDetailsContainer.appendChild(movieWebsite);
-
-	})
- })
+		/*** It retrieves a query (URL) parameter value** 
+		It expects you to send the parameter key(before '=')* **/
+		function getUrlParameter(name) {
+		name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+		const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+		const results = regex.exec(location.search);
+		return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+		};
+}

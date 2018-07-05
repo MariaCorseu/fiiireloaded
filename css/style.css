@@ -8,3 +8,16 @@ footer {
     color: white;
     text-align: center;
 }
+
+.img-size{
+	width:50%;
+	height:auto;
+}
+
+.movieDetailsContainer{
+    overflow:auto;
+}
+
+#carousels{
+    overflow:auto;
+}

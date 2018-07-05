@@ -28,3 +28,12 @@ footer {
 .movieDetailsContainer{
     overflow:auto;
 }
+
+.imdbicon {
+    width:10%;
+    height:auto;    
+}
+
+#searchBar {
+    width: 70%;
+}

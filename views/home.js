@@ -21,7 +21,7 @@ function Onloaded(){
 				//containElements.firstChild.classList.add('active');
 
 				const item=viewData.itemList[i];
-
+				//console.log(item);
 
 				const title=document.createElement("a");
 				//title.setAttribute('href', basePath + '/pages/movieDetails.html?movieId='+item._id);
@@ -84,7 +84,6 @@ function Onloaded(){
 				localStorage.setItem('loginToken', accessToken);
 				console.log("LOCAL STORAGE TOKEN = ",localStorage.loginToken);
 			})
-		//validare(daca exista userul sau daca se potriveste parola cu usenameul)
 		//la logare sa apara butoanele de edit, delete, create.(daca nu e tokenul in locale storage sa fie butoanele hide)
 	})
 
@@ -100,14 +99,15 @@ function Onloaded(){
 
 
 		const movieAddData = {
-			title:title,
-			year:year,
-			type:type,
-			poster:imageUrl,
+			Title:title,
+			Year:year,
+			Type:type,
+			Poster:imageUrl,
 		}
 
-		const movieAdded = new Movie(movieAddData);
+		const movieAdded = new Movie();
 		movieAdded.addMovie(movieAddData);
+		console.log(movieAdded.addMovie(movieAddData));
 	})
 	
 	function CreateMovieListError(xhr){
@@ -118,5 +118,3 @@ function Onloaded(){
 
 let token = localStorage.getItem("loginToken");
 console.log("global token = ", token);
-
-

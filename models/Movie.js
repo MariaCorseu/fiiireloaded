@@ -17,26 +17,24 @@ class Movie {
     this.imdbVotes=null;
     this.imdbID="";
     this.Type="";
-
   }
   
-  addMovie(data) {
-    return $.ajax(dapiUrl, {
-      headers: {
-        'X-Auth-Token' : token
-      },
-      method:"POST",
-      data: data,
-      success:(response) => {
-        console.log(response);
-        alert("Movie was succesfully added!");
-        location.reload(true);
-      },
-      error:(xhr) => {
-        alert("Something went wrong adding new movie");
-        console.log("Error", xhr);
-      }
-    })
+ addMovie(data) {
+  return $.ajax(dapiUrl, {
+    headers: {
+      'X-Auth-Token' : token
+    },
+    method:"POST",
+    data: data,
+    success:(response) => {
+      console.log(response);
+      alert("Movie was succesfully added!");
+    },
+    error:(xhr) => {
+      alert("Something went wrong adding new movie");
+      console.log("Error", xhr);
+    }
+  })
   }
 
 }

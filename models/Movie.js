@@ -57,7 +57,7 @@ class MovieDetails extends Movie{
     this.Response="";
   }
   fetchData(id) {
-      return $.ajax("https://ancient-caverns-16784.herokuapp.com/movies/" + id, {
+      return $.ajax("https://ancient-caverns-16784.herokuapp.com/movies" + id, {
       method:"GET",
       success: (res) => {
         console.log(res);

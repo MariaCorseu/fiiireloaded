@@ -89,9 +89,9 @@ function Onloaded(){
 
 	//Add Movie 
 	const addMovieButton = document.querySelector("[name='addMovie']");
-	console.log(addMovieButton);
+	//console.log(addMovieButton);
 	addMovieButton.addEventListener("click", (event) => {
-		console.log(event.target);
+		//console.log(event.target);
 		const title = document.querySelector("[name='titleCreate']").value;
 		const year = document.querySelector("[name='yearCreate']").value;
 		const type = document.querySelector("[name='typeCreate']").value;
@@ -107,7 +107,6 @@ function Onloaded(){
 
 		const movieAdded = new Movie();
 		movieAdded.addMovie(movieAddData);
-		console.log(movieAdded.addMovie(movieAddData));
 	})
 	
 	function CreateMovieListError(xhr){

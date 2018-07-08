@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../models/Movie.js"></script>
+   <script src="../env.js" ></script>
+	<script type="text/javascript" type="text/javascript" src="../models/Movie.js"></script>
     <script type="text/javascript" src="../models/MovieList.js"></script>
 	<script type="text/javascript" src="../views/home.js"></script>
 	<script type="text/javascript" src="../models/Auth.js"></script>
@@ -17,8 +18,8 @@
 	<header>		
 		<div class="container">						
 			<form>
-				<img class="imdbicon" src="../images/IMDb_icon.png" alt="IMDb_icon">
-				<input type="text" placeholder="Find Movies, TV shows, Celebrities and more..." id="searchBar" autocomplete="off">
+				<img src="../images/IMDb_icon.png" alt="IMDb_icon" height="auto" width="10%">
+				<input type="text" placeholder="Find Movies, TV shows, Celebrities and more..." size="100%">
 				<button id="navbar-submit-button" type="submit"><span><i class="material-icons">search</i></span></button>
 			</form>
 		</div>
@@ -35,35 +36,37 @@
 			    <input type="password" placeholder="Enter Password" name="psw" required>
 			    <button type="submit">Login</button>
 		  </div>
+		  <button class="btn id="logout-button">Log Out </button>
 		</form>
 	
 		<form>
 		  <div class="container">
 		  	<button class="btn" onclick="hiddenRegister()">Register now</button>
-		  	<!-- <a onclick="hiddenRegister()" href="#"><h1>Register Now</h1></a> -->
 		  	<div id="register">
-			    <!-- <p>Please fill in this form to create an account.</p> -->
 			    <hr>
 				<label for="username"><b>Username</b></label>
 				<input type="text" name="username" value="" placeholder="Enter Username" required>
+		    <hr>
 				<label for="email"><b>Email</b></label>
 		    <input type="text" placeholder="Enter Email" name="email" required>
+
 		    <label for="psw"><b>Password</b></label>
 		    <input type="password" placeholder="Enter Password" name="psw" required>
-			    <label for="email"><b>Email</b></label>
-			    <input type="text" placeholder="Enter Email" name="email" required>
-			    <label for="psw"><b>Password</b></label>
-			    <input type="password" placeholder="Enter Password" name="psw" required>
-			    <label for="psw-repeat"><b>Repeat Password</b></label>
-			    <input type="password" placeholder="Repeat Password" name="psw-repeat" required> 
-			    <div class="clearfix">			      
-			      <button type="submit" class="signupbtn">Sign Up</button>
-			    </div>
+
+		    <label for="psw-repeat"><b>Repeat Password</b></label>
+		    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+		    <div class="clearfix">
+		      <button type="button" class="cancelbtn">Cancel</button>
+		      <button type="submit" class="signupbtn">Sign Up</button>
 		    </div>
 		  </div>
 		</form>
-	</header>		
+	</header>
+		
 	<div id="container"></div>
+
+	<footer>
+	
 	<footer>
 		<p>© 2018 - Fiii Ploii bestDevelopmentTeam | All rights reserved.</p>
 		<p>Contact information: <a href="mailto:someone@example.com">

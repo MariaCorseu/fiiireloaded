@@ -1,7 +1,7 @@
 class User {
-	constructor(data) {
-		this.username = data.username;
-		this.password = data.password;
+	constructor() {
+		this.username = "";
+		this.password = "";
 	}
 
 	sendLoginData (data) {
@@ -17,5 +17,21 @@ class User {
 			},
 		});
 	};
+
+//logout method
+
+	SendLogoutData(){
+		return $.ajax("https://ancient-caverns-16784.herokuapp.com/auth/logout",{
+			method:"GET",
+			success:(response)=>{
+				console.log("Logout message is : ",response);
+			},
+			error:(xhr)=>{
+				console.log("Error message : ",xhr);
+			}
+		});
+
+	}
+
 };
 

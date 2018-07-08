@@ -23,6 +23,7 @@ class User {
 	SendLogoutData(){
 		return $.ajax("https://ancient-caverns-16784.herokuapp.com/auth/logout",{
 			method:"GET",
+			headers:{},
 			success:(response)=>{
 				console.log("Logout message is : ",response);
 			},

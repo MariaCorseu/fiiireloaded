@@ -24,17 +24,8 @@
 			</div>
 
 			<div id="buttons">
-			  	<button class="btn" onclick="hiddenLogin()">Log in</button>
-				  	<div id="login">			  	
-					    <label for="uname"><b>Username</b></label>
-					    <input type="text" placeholder="Enter Username" name="uname" required>
-					    <label for="psw"><b>Password</b></label>
-					    <input type="password" placeholder="Enter Password" name="psw" required>
-					    <button type="submit" name="login">Login</button>
-					    <button class="btn" id="logout-button">Log Out </button>
-			  		</div>
 
-			  	<button class="btn" onclick="hiddenAdd()">Add Movie</button>
+				<button class="btn" onclick="hiddenAdd()">Add Movie</button>
 					<div id="addMovieContainer">
 						<input type=text placeholder="Title" name="titleCreate">
 						<input type=text placeholder="Year" name="yearCreate">
@@ -43,12 +34,21 @@
 						<button type="submit" name="addMovie">Add Movie</button>
 					</div>
 
+			  	<button class="btn" onclick="hiddenLogin()">Log in</button>
+				  	<div id="login">			  	
+					    <label for="uname"><b>Username</b></label>
+					    <input type="text" placeholder="Enter Username" name="uname" required>
+					    <label for="psw"><b>Password</b></label>
+					    <input type="password" placeholder="Enter Password" name="psw" required>
+					    <button type="submit" name="login">Login</button>
+					    <button class="btn" id="logout-button">Log Out </button>	
+			  		</div>	
+			  		  	
+
 			  	<button class="btn" onclick="hiddenRegister()">Register now</button>
 				  	<div id="register">
 						<label for="username"><b>Username</b></label>
 						<input type="text" name="username" value="" placeholder="Enter Username" required>
-						<label for="email"><b>Email</b></label>
-					    <input type="text" placeholder="Enter Email" name="email" required>
 					    <label for="psw"><b>Password</b></label>
 					    <input type="password" placeholder="Enter Password" name="psw" required>
 					    <label for="psw-repeat"><b>Repeat Password</b></label>
@@ -59,11 +59,8 @@
 		</div>
 	</header>
 
-	<div id="movieListContainer">
+	<div id="movieListContainer"></div>
 
-	</div>
-	
-	
 	<footer>
 		<p>© 2018 - Fiii Ploii bestDevelopmentTeam | All rights reserved.</p>
 		<p>Contact information: <a href="mailto:someone@example.com">

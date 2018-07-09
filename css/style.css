@@ -7,7 +7,6 @@ body {
 }
 
 .container {
-/*    background-image: url('https://i.pinimg.com/originals/d3/f3/8b/d3f38b3264c9f847840c6a56673c87a1.jpg');*/
     color: white;
     display: flex;
     justify-content: space-between;
@@ -57,8 +56,12 @@ footer {
     background-color: #f5de50;
     color: white;
     text-align: center;
+    color: black;
+    font-style: 
 
-}
 .item {
+
     display:block;
 }
+
+

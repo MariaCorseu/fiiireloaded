@@ -101,6 +101,7 @@ function Onloaded(){
 		//la logare sa apara butoanele de edit, delete, create.(daca nu e tokenul in locale storage sa fie butoanele hide)
 	})
 
+
 	//Add Movie 
 	const addMovieButton = document.querySelector("[name='addMovie']");
 	//console.log(addMovieButton);
@@ -166,3 +167,4 @@ function hiddenRegister() {
         x.style.display = "none";
     }
 }
+

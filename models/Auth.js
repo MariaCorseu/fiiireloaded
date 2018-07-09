@@ -12,7 +12,7 @@ class User {
 				//console.log(response);
 			},
 			error:(xhr) => {
-				alert("Login failed!");
+				alert("Invalid username or password.");
 				console.log("Error", xhr);
 			},
 		});
@@ -23,7 +23,7 @@ class User {
 	SendLogoutData(){
 		return $.ajax("https://ancient-caverns-16784.herokuapp.com/auth/logout",{
 			method:"GET",
-			headers:{},
+			headers:{'X-Auth-Token':localStorage.getItem('loginToken')},
 			success:(response)=>{
 				console.log("Logout message is : ",response);
 			},

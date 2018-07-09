@@ -17,26 +17,25 @@ class Movie {
     this.imdbVotes=null;
     this.imdbID="";
     this.Type="";
-
   }
   
-  addMovie(data) {
-    return $.ajax(dapiUrl, {
-      headers: {
-        'X-Auth-Token' : token
-      },
-      method:"POST",
-      data: data,
-      success:(response) => {
-        console.log(response);
-        alert("Movie was succesfully added!");
-        location.reload(true);
-      },
-      error:(xhr) => {
-        alert("Something went wrong adding new movie");
-        console.log("Error", xhr);
-      }
-    })
+ addMovie(data) {
+  return $.ajax(dapiUrl, {
+    headers: {
+      'X-Auth-Token' : token
+    },
+    method:"POST",
+    data: data,
+    success:(response) => {
+      console.log(response);
+      alert("Movie was succesfully added!");
+      location.reload(true);
+    },
+    error:(xhr) => {
+      alert("Something went wrong adding new movie");
+      console.log("Error", xhr);
+    }
+  })
   }
 
 }
@@ -59,7 +58,7 @@ class MovieDetails extends Movie{
     this.Response="";
   }
   fetchData(id) {
-      return $.ajax("https://ancient-caverns-16784.herokuapp.com/movies/" + id, {
+      return $.ajax("https://ancient-caverns-16784.herokuapp.com/movies" + id, {
       method:"GET",
       success: (res) => {
         console.log(res);

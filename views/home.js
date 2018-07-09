@@ -21,7 +21,7 @@ function Onloaded(){
 				//containElements.firstChild.classList.add('active');
 
 				const item=viewData.itemList[i];
-
+				//console.log(item);
 
 				const title=document.createElement("a");
 				title.setAttribute('href', basePath + '/pages/movieDetails.html?movieId='+item._id);
@@ -84,15 +84,14 @@ function Onloaded(){
 				localStorage.setItem('loginToken', accessToken);
 				console.log("LOCAL STORAGE TOKEN = ",localStorage.loginToken);
 			})
-		//validare(daca exista userul sau daca se potriveste parola cu usenameul)
 		//la logare sa apara butoanele de edit, delete, create.(daca nu e tokenul in locale storage sa fie butoanele hide)
 	})
 
 	//Add Movie 
 	const addMovieButton = document.querySelector("[name='addMovie']");
-	console.log(addMovieButton);
+	//console.log(addMovieButton);
 	addMovieButton.addEventListener("click", (event) => {
-		console.log(event.target);
+		//console.log(event.target);
 		const title = document.querySelector("[name='titleCreate']").value;
 		const year = document.querySelector("[name='yearCreate']").value;
 		const type = document.querySelector("[name='typeCreate']").value;
@@ -100,13 +99,13 @@ function Onloaded(){
 
 
 		const movieAddData = {
-			title:title,
-			year:year,
-			type:type,
-			poster:imageUrl,
+			Title:title,
+			Year:year,
+			Type:type,
+			Poster:imageUrl,
 		}
 
-		const movieAdded = new Movie(movieAddData);
+		const movieAdded = new Movie();
 		movieAdded.addMovie(movieAddData);
 	})
 	
@@ -119,4 +118,29 @@ function Onloaded(){
 let token = localStorage.getItem("loginToken");
 console.log("global token = ", token);
 
+function hiddenLogin() {
+    var x = document.getElementById("login");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
 
+function hiddenAdd() {
+    var x = document.getElementById("addMovieContainer");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function hiddenRegister() {
+    var x = document.getElementById("register");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}

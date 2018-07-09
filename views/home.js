@@ -155,32 +155,7 @@ function logoutError(xhr){
 let token = localStorage.getItem("loginToken");
 console.log("global token = ", token);
 
-// function hiddenLogin() {
-//     var x = document.getElementById("login");
-//     if (x.style.display === "none") {
-//         x.style.display = "block";
-//     } else {
-//         x.style.display = "none";
-//     }
-// }
 
-// function hiddenAdd() {
-//     var x = document.getElementById("addMovieContainer");
-//     if (x.style.display === "none") {
-//         x.style.display = "block";
-//     } else {
-//         x.style.display = "none";
-//     }
-// }
-
-// function hiddenRegister() {
-//     var x = document.getElementById("register");
-//     if (x.style.display === "none") {
-//         x.style.display = "block";
-//     } else {
-//         x.style.display = "none";
-//     }
-// }
 
  $( function() {
     $( "#login" ).dialog({

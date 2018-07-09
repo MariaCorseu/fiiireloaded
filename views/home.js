@@ -144,3 +144,4 @@ function hiddenRegister() {
         x.style.display = "none";
     }
 }
+

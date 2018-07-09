@@ -55,5 +55,6 @@ footer {
     color: black;
     font-style: 
 
+.item {
+    display: inline-block;
 }
-

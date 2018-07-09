@@ -3,6 +3,19 @@ window.onload=Onloaded;
 
 
 function Onloaded(){
+	const logoutUser=new User();
+	const logoutButton=document.getElementById('logout-button');
+	logoutButton.addEventListener('click',(e)=>{
+		e.preventDefault();
+		logoutUser.SendLogoutData()
+		.then(logoutUsers)
+		.catch(logoutError);
+	});
+	
+	function logoutUsers(){
+		localStorage.clear();
+	}
+
 	const viewData=new Movies();
 	viewData.getMovies()
 	.then(createMovieList)
@@ -24,7 +37,8 @@ function Onloaded(){
 				//console.log(item);
 
 				const title=document.createElement("a");
-				//title.setAttribute('href', basePath + '/pages/movieDetails.html?movieId='+item._id);
+
+				title.setAttribute('href','file:///C:/final-project/fiiireloaded/pages/movieDetails.html?movieId='+item._id);
 				title.setAttribute('target','blank');
 				title.innerHTML=item.Title+'<br>';
 
@@ -87,6 +101,7 @@ function Onloaded(){
 		//la logare sa apara butoanele de edit, delete, create.(daca nu e tokenul in locale storage sa fie butoanele hide)
 	})
 
+
 	//Add Movie 
 	const addMovieButton = document.querySelector("[name='addMovie']");
 	//console.log(addMovieButton);
@@ -108,7 +123,15 @@ function Onloaded(){
 		const movieAdded = new Movie();
 		movieAdded.addMovie(movieAddData);
 	})
-	
+
+function CreateMovieListError(xhr){
+	console.log("error",xhr);
+}
+
+function logoutError(xhr){
+	console.log("error",xhr);
+}	
+
 	function CreateMovieListError(xhr){
 		console.log("error",xhr);
 	}	

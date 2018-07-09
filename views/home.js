@@ -37,6 +37,7 @@ function Onloaded(){
 				//console.log(item);
 
 				const title=document.createElement("a");
+
 				title.setAttribute('href','file:///C:/final-project/fiiireloaded/pages/movieDetails.html?movieId='+item._id);
 				title.setAttribute('target','blank');
 				title.innerHTML=item.Title+'<br>';
@@ -138,3 +139,30 @@ function logoutError(xhr){
 
 let token = localStorage.getItem("loginToken");
 console.log("global token = ", token);
+
+function hiddenLogin() {
+    var x = document.getElementById("login");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function hiddenAdd() {
+    var x = document.getElementById("addMovieContainer");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function hiddenRegister() {
+    var x = document.getElementById("register");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}

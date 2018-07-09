@@ -38,6 +38,22 @@ class Movie {
   })
   }
 
+  deleteMovie(id) {
+    return $.ajax("https://ancient-caverns-16784.herokuapp.com/movies/" + id, {
+      headers: {
+      'X-Auth-Token' : token
+      },
+      method:"DELETE",
+      success: (response) => {
+        console.log(response);
+        alert("The movie was succesfully deleted");
+      },
+      error: (xhr) => {
+        console.log("Error", xhr);
+      }
+    })
+  }
+
 }
 
 class MovieDetails extends Movie{

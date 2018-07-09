@@ -3,7 +3,7 @@ class User {
 		this.username = "";
 		this.password = "";
 	}
-
+//login
 	sendLoginData (data) {
 		return $.ajax("https://ancient-caverns-16784.herokuapp.com/auth/login", {
 			method:"POST",
@@ -33,6 +33,23 @@ class User {
 		});
 
 	}
+
+//register
+	registerData (data) {
+		return $.ajax ("https://ancient-caverns-16784.herokuapp.com/auth/register", {
+			method:"POST",
+			data:data,
+			success:(response) => {
+				console.log(response);
+				alert("Registration completed successfully");
+			},
+			error:(xhr) => {
+				console.log("Error", xhr);
+				alert("Username already existing");
+			}
+		})
+	}
+
 
 };
 

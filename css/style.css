@@ -1,9 +1,6 @@
 body {
     background: url("https://4.bp.blogspot.com/-cP-2hq17x6Q/VsWR8UKOQlI/AAAAAAAABQE/3wnhoOxbrPI/s1600/deadpool-movie-wallpaper-4k-3840x2160.jpg") no-repeat center fixed;
-    background-size:cover;
-    -o-background-size:cover;
-    -moz-background-size:cover;
-    -webkit-background-size:cover;
+    background-size: cover;
 }
 
 .container {
@@ -19,6 +16,10 @@ body {
 
 #searchBar {
     padding: 2%;
+}
+
+#searchBarInput {
+    width: 70%
 }
 
 #buttons {
@@ -60,8 +61,5 @@ footer {
     font-style: 
 
 .item {
-
     display:block;
 }
-
-

@@ -134,8 +134,22 @@ function logoutError(xhr){
 
 	function CreateMovieListError(xhr){
 		console.log("error",xhr);
-	}	
+	}
 
+	//register new user
+	const registerBtn = document.getElementById('signupbtn');
+	//console.log(registerBtn);
+	registerBtn.addEventListener("click", (event) => {
+		event.preventDefault();
+		const usernameRegister = document.querySelector('[name="username"]').value;	
+		const passwordRegister = document.querySelector('[name="pswR"]').value;
+		const dataRegister = {
+			username:usernameRegister,
+			password:passwordRegister,
+		};
+		const userRegister = new User();
+		userRegister.registerData(dataRegister);
+	})
 }
 
 let token = localStorage.getItem("loginToken");

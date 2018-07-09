@@ -55,3 +55,6 @@ footer {
     text-align: center;
 
 }
+.item {
+    display: inline-block;
+}

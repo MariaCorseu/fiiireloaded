@@ -24,7 +24,7 @@ function Onloaded(){
 				//console.log(item);
 
 				const title=document.createElement("a");
-				//title.setAttribute('href', basePath + '/pages/movieDetails.html?movieId='+item._id);
+				title.setAttribute('href', basePath + '/pages/movieDetails.html?movieId='+item._id);
 				title.setAttribute('target','blank');
 				title.innerHTML=item.Title+'<br>';
 

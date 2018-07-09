@@ -112,36 +112,79 @@ function Onloaded(){
 	
 	function CreateMovieListError(xhr){
 		console.log("error",xhr);
-	}	
+	}
 
+	//register new user
+	const registerBtn = document.getElementById('signupbtn');
+	//console.log(registerBtn);
+	registerBtn.addEventListener("click", (event) => {
+		event.preventDefault();
+		const usernameRegister = document.querySelector('[name="username"]').value;	
+		const passwordRegister = document.querySelector('[name="pswR"]').value;
+		const dataRegister = {
+			username:usernameRegister,
+			password:passwordRegister,
+		};
+		const userRegister = new User();
+		userRegister.registerData(dataRegister);
+	})
 }
 
 let token = localStorage.getItem("loginToken");
 console.log("global token = ", token);
 
-function hiddenLogin() {
-    var x = document.getElementById("login");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
 
-function hiddenAdd() {
-    var x = document.getElementById("addMovieContainer");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
 
-function hiddenRegister() {
-    var x = document.getElementById("register");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
+ $( function() {
+    $( "#login" ).dialog({
+      autoOpen: false,
+      show: {
+        effect: "blind",
+        duration: 1000
+      },
+      hide: {
+        effect: "explode",
+        duration: 1000
+      }
+    });
+ 
+    $( "#opener" ).on( "click", function() {
+      $( "#login" ).dialog( "open" );
+    });
+  } );
+
+ $( function() {
+    $( "#register" ).dialog({
+      autoOpen: false,
+      show: {
+        effect: "blind",
+        duration: 1000
+      },
+      hide: {
+        effect: "explode",
+        duration: 1000
+      }
+    });
+ 
+    $( "#openerReg" ).on( "click", function() {
+      $( "#register" ).dialog( "open" );
+    });
+  } );
+
+ $( function() {
+    $( "#addMovieContainer" ).dialog({
+      autoOpen: false,
+      show: {
+        effect: "blind",
+        duration: 1000
+      },
+      hide: {
+        effect: "explode",
+        duration: 1000
+      }
+    });
+ 
+    $( "#openerAdd" ).on( "click", function() {
+      $( "#addMovieContainer" ).dialog( "open" );
+    });
+  } );

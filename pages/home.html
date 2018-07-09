@@ -15,7 +15,7 @@
 	<script type="text/javascript" src="../models/Auth.js"></script>
 </head>
 <body>
-	<header>		
+	<header>	
 		<div class="container">						
 			<form>
 				<img src="../images/IMDb_icon.png" alt="IMDb_icon" height="auto" width="10%">
@@ -25,47 +25,60 @@
 		</div>
 
 		<form> 
-		  <div class="container">
-		  	<button class="btn" onclick="hiddenLogin()">Log in</button>
+		 	<div class="container">
+		  		<button class="btn" onclick="hiddenLogin()">Log in</button>
 		  	<!-- <a href="#"><h1 onclick="hiddenLogin()">Log In</h1></a> -->
-		  	<div id="login">
-		  		<hr>
-			    <label for="uname"><b>Username</b></label>
-			    <input type="text" placeholder="Enter Username" name="uname" required>
-			    <label for="psw"><b>Password</b></label>
-			    <input type="password" placeholder="Enter Password" name="psw" required>
-			    <button type="submit">Login</button>
-		  </div>
-		  <button class="btn id="logout-button">Log Out </button>
+			  	<div id="login">
+			  		<hr>
+				    <label for="uname"><b>Username</b></label>
+				    <input type="text" placeholder="Enter Username" name="uname" required>
+				    <label for="psw"><b>Password</b></label>
+				    <input type="password" placeholder="Enter Password" name="psw" required>
+				    <button type="submit" name="login">Login</button>
+		  		</div>
+		  		<button class="btn id="logout-button">Log Out </button>
+
+		  		<button class="btn" onclick="hiddenAdd()">Add Movie</button>
+				<div id="addMovieContainer">
+					<input type=text placeholder="Title" name="titleCreate">
+					<input type=text placeholder="Year" name="yearCreate">
+					<input type=text placeholder="Type" name="typeCreate">
+					<input type=text placeholder="Image URL" name="posterCreate">
+					<button type="submit" name="addMovie">Add Movie</button>
+				</div>
+			</div>
 		</form>
 	
 		<form>
-		  <div class="container">
-		  	<button class="btn" onclick="hiddenRegister()">Register now</button>
-		  	<div id="register">
-			    <hr>
-				<label for="username"><b>Username</b></label>
-				<input type="text" name="username" value="" placeholder="Enter Username" required>
-		    <hr>
-				<label for="email"><b>Email</b></label>
-		    <input type="text" placeholder="Enter Email" name="email" required>
-
-		    <label for="psw"><b>Password</b></label>
-		    <input type="password" placeholder="Enter Password" name="psw" required>
-
-		    <label for="psw-repeat"><b>Repeat Password</b></label>
-		    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-		    <div class="clearfix">
-		      <button type="button" class="cancelbtn">Cancel</button>
-		      <button type="submit" class="signupbtn">Sign Up</button>
-		    </div>
-		  </div>
+		  	<div class="container">
+		  		<button class="btn" onclick="hiddenRegister()">Register now</button>
+			  	<div id="register">
+				    <hr>
+					<label for="username"><b>Username</b></label>
+					<input type="text" name="username" value="" placeholder="Enter Username" required>
+					<label for="email"><b>Email</b></label>
+				    <input type="text" placeholder="Enter Email" name="email" required>
+				    <label for="psw"><b>Password</b></label>
+				    <input type="password" placeholder="Enter Password" name="psw" required>
+				    <label for="psw-repeat"><b>Repeat Password</b></label>
+				    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+				    <div class="clearfix">
+			      	<button type="submit" class="signupbtn">Sign Up</button>
+			    	</div>
+			  	</div>
+			</div>
 		</form>
 	</header>
+
 		
 	<div id="container"></div>
 
 	<footer>
+
+
+	<div id="movieListContainer">
+
+	</div>
 	
 	<footer>
 		<p>© 2018 - Fiii Ploii bestDevelopmentTeam | All rights reserved.</p>

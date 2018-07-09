@@ -12,7 +12,7 @@ class User {
 				//console.log(response);
 			},
 			error:(xhr) => {
-				alert("Login failed!");
+				alert("Invalid username or password.");
 				console.log("Error", xhr);
 			},
 		});

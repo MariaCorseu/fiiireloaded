@@ -3,19 +3,6 @@ window.onload=Onloaded;
 
 
 function Onloaded(){
-	const logoutUser=new User();
-	const logoutButton=document.getElementById('logout-button');
-	logoutButton.addEventListener('click',(e)=>{
-		e.preventDefault();
-		logoutUser.SendLogoutData()
-		.then(logoutUsers)
-		.catch(logoutError);
-	});
-	
-	function logoutUsers(){
-		localStorage.clear();
-	}
-
 	const viewData=new Movies();
 	viewData.getMovies()
 	.then(createMovieList)
@@ -37,8 +24,7 @@ function Onloaded(){
 				//console.log(item);
 
 				const title=document.createElement("a");
-
-				title.setAttribute('href','file:///C:/final-project/fiiireloaded/pages/movieDetails.html?movieId='+item._id);
+				title.setAttribute('href','file:///E:/FinalProject/fiiireloaded/pages/movieDetails.html?movieId='+item._id);
 				title.setAttribute('target','blank');
 				title.innerHTML=item.Title+'<br>';
 
@@ -123,15 +109,7 @@ function Onloaded(){
 		const movieAdded = new Movie();
 		movieAdded.addMovie(movieAddData);
 	})
-
-function CreateMovieListError(xhr){
-	console.log("error",xhr);
-}
-
-function logoutError(xhr){
-	console.log("error",xhr);
-}	
-
+	
 	function CreateMovieListError(xhr){
 		console.log("error",xhr);
 	}	

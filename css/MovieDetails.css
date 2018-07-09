@@ -1,0 +1,27 @@
+h3 {
+	display:flex;
+	justify-content:center;
+}
+
+.img-size {
+display:flex;
+max-width: 100%;
+height: auto;
+height: 268px;
+width: 182px;
+margin: 0px;
+}
+
+#movieDetailsContainer {
+  border-style: solid 2px grey;
+  height: 69.118px;
+  width: 1110px;
+}
+
+p {
+	flex-wrap: wrap;
+	display:flex; 
+	justify-content: flex-end;
+	align-items: flex-start;
+	
+}

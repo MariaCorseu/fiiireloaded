@@ -17,57 +17,44 @@
 <body>
 	<header>	
 		<div class="container">						
-			<form>
-				<img src="../images/IMDb_icon.png" alt="IMDb_icon" height="auto" width="10%">
-				<input type="text" placeholder="Find Movies, TV shows, Celebrities and more..." size="100%">
-				<button id="navbar-submit-button" type="submit"><span><i class="material-icons">search</i></span></button>
-			</form>
-		</div>
-
-		<form> 
-		 	<div class="container">
-		  		<button class="btn" onclick="hiddenLogin()">Log in</button>
-		  	<!-- <a href="#"><h1 onclick="hiddenLogin()">Log In</h1></a> -->
-			  	<div id="login">
-			  		<hr>
-				    <label for="uname"><b>Username</b></label>
-				    <input type="text" placeholder="Enter Username" name="uname" required>
-				    <label for="psw"><b>Password</b></label>
-				    <input type="password" placeholder="Enter Password" name="psw" required>
-				    <button type="submit" name="login">Login</button>
-		  		</div>
-		  		<button class="btn id="logout-button">Log Out </button>
-
-		  		<button class="btn" onclick="hiddenAdd()">Add Movie</button>
-				<div id="addMovieContainer">
-					<input type=text placeholder="Title" name="titleCreate">
-					<input type=text placeholder="Year" name="yearCreate">
-					<input type=text placeholder="Type" name="typeCreate">
-					<input type=text placeholder="Image URL" name="posterCreate">
-					<button type="submit" name="addMovie">Add Movie</button>
+			<img id="imdbicon" src="../images/IMDb_icon.png" alt="IMDb_icon">
+				<div id="searchBar">
+					<input type="text" placeholder="Find Movies, TV shows, Celebrities and more...">
+					<button id="navbar-submit-button" type="submit"><span><i class="material-icons">search</i></span></button>
 				</div>
+			<div id="buttons">
+			  	<button class="btn" onclick="hiddenLogin()">Log in</button>
+				  	<div id="login">			  	
+					    <label for="uname"><b>Username</b></label>
+					    <input type="text" placeholder="Enter Username" name="uname" required>
+					    <label for="psw"><b>Password</b></label>
+					    <input type="password" placeholder="Enter Password" name="psw" required>
+					    <button type="submit" name="login">Login</button>
+			  		</div>
+
+			  	<button class="btn" onclick="hiddenAdd()">Add Movie</button>
+					<div id="addMovieContainer">
+						<input type=text placeholder="Title" name="titleCreate">
+						<input type=text placeholder="Year" name="yearCreate">
+						<input type=text placeholder="Type" name="typeCreate">
+						<input type=text placeholder="Image URL" name="posterCreate">
+						<button type="submit" name="addMovie">Add Movie</button>
+					</div>
+
+			  	<button class="btn" onclick="hiddenRegister()">Register now</button>
+				  	<div id="register">
+						<label for="username"><b>Username</b></label>
+						<input type="text" name="username" value="" placeholder="Enter Username" required>
+						<label for="email"><b>Email</b></label>
+					    <input type="text" placeholder="Enter Email" name="email" required>
+					    <label for="psw"><b>Password</b></label>
+					    <input type="password" placeholder="Enter Password" name="psw" required>
+					    <label for="psw-repeat"><b>Repeat Password</b></label>
+					    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+				      	<button type="submit" class="signupbtn">Sign Up</button>
+				  	</div>
 			</div>
-		</form>
-	
-		<form>
-		  	<div class="container">
-		  		<button class="btn" onclick="hiddenRegister()">Register now</button>
-			  	<div id="register">
-				    <hr>
-					<label for="username"><b>Username</b></label>
-					<input type="text" name="username" value="" placeholder="Enter Username" required>
-					<label for="email"><b>Email</b></label>
-				    <input type="text" placeholder="Enter Email" name="email" required>
-				    <label for="psw"><b>Password</b></label>
-				    <input type="password" placeholder="Enter Password" name="psw" required>
-				    <label for="psw-repeat"><b>Repeat Password</b></label>
-				    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-				    <div class="clearfix">
-			      	<button type="submit" class="signupbtn">Sign Up</button>
-			    	</div>
-			  	</div>
-			</div>
-		</form>
+		</div>
 	</header>
 
 		
@@ -79,6 +66,7 @@
 	<div id="movieListContainer">
 
 	</div>
+	<button class="btn id="logout-button">Log Out </button>
 	
 	<footer>
 		<p>© 2018 - Fiii Ploii bestDevelopmentTeam | All rights reserved.</p>

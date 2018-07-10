@@ -32,8 +32,8 @@ class Movie {
       location.reload(true);
     },
     error:(xhr) => {
-      alert("Something went wrong adding new movie");
-      console.log("Error", xhr);
+      const parsedMessage = JSON.parse(xhr.responseText);
+      alert('STATUS ' + xhr.status + '. ' + parsedMessage.message);
     }
   })
   }
@@ -49,7 +49,8 @@ class Movie {
         alert("The movie was succesfully deleted");
       },
       error: (xhr) => {
-        console.log("Error", xhr);
+        const parsedMessage = JSON.parse(xhr.responseText);
+        alert('STATUS ' + xhr.status + '. ' + parsedMessage.message);
       }
     })
   }
@@ -105,7 +106,8 @@ class MovieDetails extends Movie{
         this.Response=res.Response;
         },
       error: (xhr) => {
-        console.log("Error", xhr);
+        const parsedMessage = JSON.parse(xhr.responseText);
+        alert('STATUS ' + xhr.status + '. ' + parsedMessage.message);
       }
     })
   }

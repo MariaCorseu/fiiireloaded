@@ -12,8 +12,8 @@ class User {
 				//console.log(response);
 			},
 			error:(xhr) => {
-				alert("Invalid username or password.");
-				console.log("Error", xhr);
+				const parsedMessage = JSON.parse(xhr.responseText);
+				alert('STATUS ' + xhr.status + '. ' + parsedMessage.message);
 			},
 		});
 	};
@@ -28,8 +28,8 @@ class User {
 				console.log("Logout message is : ",response);
 			},
 			error:(xhr)=>{
-				console.log("Error message : ",xhr);
-			}
+				const parsedMessage = JSON.parse(xhr.responseText);
+				alert('STATUS ' + xhr.status + '. ' + parsedMessage.message);
 		});
 
 	}
@@ -44,8 +44,8 @@ class User {
 				alert("Registration completed successfully");
 			},
 			error:(xhr) => {
-				console.log("Error", xhr);
-				alert("Username already existing");
+				const parsedMessage = JSON.parse(xhr.responseText);
+				alert('STATUS ' + xhr.status + '. ' + parsedMessage.message);
 			}
 		})
 	}

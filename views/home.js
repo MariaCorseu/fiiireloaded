@@ -75,8 +75,8 @@ function Onloaded(){
 				username:userName,
 				password:password,
 			};
-			const currentUserLogin = new User(dataUser); 
-			console.log(currentUserLogin);
+			const currentUserLogin = new User(); 
+			//console.log(currentUserLogin);
 			currentUserLogin.sendLoginData(dataUser).then((response) => {
 				console.log(response);
 				let accessToken = response.accessToken;

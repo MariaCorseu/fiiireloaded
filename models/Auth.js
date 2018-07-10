@@ -30,6 +30,7 @@ class User {
 			error:(xhr)=>{
 				const parsedMessage = JSON.parse(xhr.responseText);
 				alert('STATUS ' + xhr.status + '. ' + parsedMessage.message);
+			},
 		});
 
 	}

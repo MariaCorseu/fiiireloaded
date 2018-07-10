@@ -3,19 +3,6 @@ window.onload=Onloaded;
 
 
 function Onloaded(){
-	const logoutUser=new User();
-	const logoutButton=document.getElementById('logout-button');
-	logoutButton.addEventListener('click',(e)=>{
-		e.preventDefault();
-		logoutUser.SendLogoutData()
-		.then(logoutUsers)
-		.catch(logoutError);
-	});
-	
-	function logoutUsers(){
-		localStorage.clear();
-	}
-
 	const viewData=new Movies();
 	viewData.getMovies()
 	.then(createMovieList)
@@ -37,8 +24,7 @@ function Onloaded(){
 				//console.log(item);
 
 				const title=document.createElement("a");
-
-				title.setAttribute('href','file:///C:/final-project/fiiireloaded/pages/movieDetails.html?movieId='+item._id);
+				title.setAttribute('href','file:///E:/FinalProject/fiiireloaded/pages/movieDetails.html?movieId='+item._id);
 				title.setAttribute('target','blank');
 				title.innerHTML=item.Title+'<br>';
 
@@ -104,12 +90,14 @@ function Onloaded(){
 		const title = document.querySelector("[name='titleCreate']").value;
 		const year = document.querySelector("[name='yearCreate']").value;
 		const type = document.querySelector("[name='typeCreate']").value;
+		const genre = document.querySelector("[name='genreCreate']").value;
 		const imageUrl = document.querySelector("[name='posterCreate']").value;
 
 
 		const movieAddData = {
 			Title:title,
 			Year:year,
+			Genre:genre,
 			Type:type,
 			Poster:imageUrl,
 		}
@@ -117,15 +105,7 @@ function Onloaded(){
 		const movieAdded = new Movie();
 		movieAdded.addMovie(movieAddData);
 	})
-
-function CreateMovieListError(xhr){
-	console.log("error",xhr);
-}
-
-function logoutError(xhr){
-	console.log("error",xhr);
-}	
-
+	
 	function CreateMovieListError(xhr){
 		console.log("error",xhr);
 	}
@@ -148,33 +128,6 @@ function logoutError(xhr){
 
 let token = localStorage.getItem("loginToken");
 console.log("global token = ", token);
-
-// function hiddenLogin() {
-//     var x = document.getElementById("login");
-//     if (x.style.display === "none") {
-//         x.style.display = "block";
-//     } else {
-//         x.style.display = "none";
-//     }
-// }
-
-// function hiddenAdd() {
-//     var x = document.getElementById("addMovieContainer");
-//     if (x.style.display === "none") {
-//         x.style.display = "block";
-//     } else {
-//         x.style.display = "none";
-//     }
-// }
-
-// function hiddenRegister() {
-//     var x = document.getElementById("register");
-//     if (x.style.display === "none") {
-//         x.style.display = "block";
-//     } else {
-//         x.style.display = "none";
-//     }
-// }
 
  $( function() {
     $( "#login" ).dialog({

@@ -16,28 +16,16 @@ body {
 
 #searchBar {
     padding: 2%;
+    width: 60%;
 }
 
 #searchBarInput {
-    width: 70%
+    width: 90%;
 }
 
 #buttons {
     padding: 2%;
 }
-
-#register {
-	display:none;
-}
-
-#login {
-	display:none;
-}
-
-#addMovieContainer {
-    display:none;
-}
-
 
 .img-size{
 	width:22%;
@@ -63,3 +51,4 @@ footer {
 .item {
     display:block;
 }
+

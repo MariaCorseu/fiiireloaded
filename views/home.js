@@ -15,16 +15,12 @@ function Onloaded(){
 		const containElements=document.getElementById("movieListContainer");
 		
 			for(let i=0;i<viewData.itemList.length;i++){
-				const divElements=document.createElement('div');
-				divElements.classList.add('item');
-				containElements.appendChild(divElements);
-				//containElements.firstChild.classList.add('active');
 
 				const item=viewData.itemList[i];
 				//console.log(item);
 
 				const title=document.createElement("a");
-				title.setAttribute('href','file:///E:/FinalProject/fiiireloaded/pages/movieDetails.html?movieId='+item._id);
+				title.setAttribute('href','file://C:/final-project/fiiireloaded/pages/movieDetails.html?movieId='+item._id);
 				title.setAttribute('target','blank');
 				title.innerHTML=item.Title+'<br>';
 
@@ -47,12 +43,12 @@ function Onloaded(){
 				button.setAttribute('data-id',item._id);
 				button.innerText="Delete";
 
-				divElements.appendChild(picture);
-				divElements.appendChild(title);
-				divElements.appendChild(genre);
-				divElements.appendChild(type);
-				divElements.appendChild(year);
-				divElements.appendChild(button);
+				containElements.appendChild(picture);
+				containElements.appendChild(title);
+				containElements.appendChild(genre);
+				containElements.appendChild(type);
+				containElements.appendChild(year);
+				containElements.appendChild(button);
 
 				
 			}

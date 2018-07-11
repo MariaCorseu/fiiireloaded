@@ -39,7 +39,7 @@ function logoutError(xhr){
 
 				const title=document.createElement("a");
 
-				title.setAttribute('href','file://C:/final-project/fiiireloaded/pages/movieDetails.html?movieId='+item._id);
+				title.setAttribute('href','file:///E:/FinalProject/fiiireloaded/pages/movieDetails.html?movieId='+item._id);
 				//title.setAttribute('href', + item._id);
 
 				title.setAttribute('target','blank');

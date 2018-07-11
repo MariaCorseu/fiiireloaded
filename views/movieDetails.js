@@ -23,55 +23,55 @@ window.onload=function(){
 			postPoster.classList.add('img-size');
 
 			const postPlot=document.createElement('p');
-			postPlot.innerHTML=currentMovie.Plot;
+			postPlot.innerHTML= "Plot: " + currentMovie.Plot;
 			
 			const postActors=document.createElement('p');
-			postActors.innerHTML=currentMovie.Actors;
+			postActors.innerHTML= "Actors: " + currentMovie.Actors;
 			
 			const postAwards=document.createElement('p');
-			postAwards.innerHTML=currentMovie.Awards;
+			postAwards.innerHTML= "Awards: " + currentMovie.Awards;
 
 			const postRuntime=document.createElement('p');
-			postRuntime.innerHTML=currentMovie.Runtime;
+			postRuntime.innerHTML= "Runtime: " + currentMovie.Runtime;
 
 			const postCountry=document.createElement('p');
-			postCountry.innerHTML=currentMovie.Country;
+			postCountry.innerHTML= "Country: " + currentMovie.Country;
 
 			const postProduction=document.createElement('p');
-			postProduction.innerHTML=currentMovie.Production;
+			postProduction.innerHTML= "Production: " + currentMovie.Production;
 
 			const postGenre=document.createElement('p');
-			postGenre.innerHTML=currentMovie.Genre;
+			postGenre.innerHTML= "Genre: " + currentMovie.Genre;
 
 			const postLanguage=document.createElement('p');
-			postLanguage.innerHTML=currentMovie.Language;
+			postLanguage.innerHTML= "Language: " + currentMovie.Language;
 
 			const postMetascore=document.createElement('p');
-			postMetascore.innerHTML=currentMovie.Metascore;
+			postMetascore.innerHTML= "Metascore: " + currentMovie.Metascore;
 
 			const postRated=document.createElement('p');
-			postRated.innerHTML=currentMovie.Rated;
+			postRated.innerHTML= "Rate: " + currentMovie.Rated;
 
 			const postReleased=document.createElement('p');
-			postReleased.innerHTML=currentMovie.Released;
+			postReleased.innerHTML= "Release Date: " + currentMovie.Released;
 
 			const postType=document.createElement('p');
-			postType.innerHTML=currentMovie.Type;
+			postType.innerHTML= "Genre: " + currentMovie.Type;
 
 			const postYear=document.createElement('p');
-			postYear.innerHTML=currentMovie.Year;
+			postYear.innerHTML= "Release Date: " + currentMovie.Year;
 
 			const postBoxOffice=document.createElement('p');
-			postBoxOffice.innerHTML=currentMovie.BoxOffice;
+			postBoxOffice.innerHTML= "BoxOffice: " + currentMovie.BoxOffice;
 
 			const postDVD=document.createElement('p');
-			postDVD.innerHTML=currentMovie.DVD;
+			postDVD.innerHTML= "Dvd: " + currentMovie.DVD;
 
 			const postimdbRating=document.createElement('p');
-			postimdbRating.innerHTML=currentMovie.imdbRating;
+			postimdbRating.innerHTML= "Imdb Rating: " + currentMovie.imdbRating;
 
 			const postimdbVotes=document.createElement('p');
-			postimdbVotes.innerHTML=currentMovie.imdbVotes;
+			postimdbVotes.innerHTML= "Imdb Votes: " + currentMovie.imdbVotes;
 
 			const postWebsite=document.createElement('a');
 			postWebsite.setAttribute('href',currentMovie.Website);

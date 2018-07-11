@@ -39,6 +39,8 @@ function logoutError(xhr){
 
 				const title=document.createElement("a");
 				title.setAttribute('href','file://C:/final-project/fiiireloaded/pages/movieDetails.html?movieId='+item._id);
+				//title.setAttribute('href', + item._id);
+
 				title.setAttribute('target','blank');
 				title.innerHTML=item.Title+'<br>';
 
@@ -83,8 +85,8 @@ function logoutError(xhr){
 				username:userName,
 				password:password,
 			};
-			const currentUserLogin = new User(dataUser); 
-			console.log(currentUserLogin);
+			const currentUserLogin = new User(); 
+			//console.log(currentUserLogin);
 			currentUserLogin.sendLoginData(dataUser).then((response) => {
 				console.log(response);
 				let accessToken = response.accessToken;

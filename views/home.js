@@ -133,7 +133,7 @@ function Onloaded(){
 }
 
 let token = localStorage.getItem("loginToken");
-console.log("global token = ", token);
+// console.log("global token = ", token);
 
  $( function() {
     $( "#login" ).dialog({

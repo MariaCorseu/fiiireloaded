@@ -3,6 +3,24 @@ window.onload=Onloaded;
 
 
 function Onloaded(){
+const logoutUser=new User();
+	const logoutButton=document.getElementById('logout-button');
+	logoutButton.addEventListener('click',(e)=>{
+		e.preventDefault();
+		logoutUser.SendLogoutData()
+		.then(logoutUsers)
+		.catch(logoutError);
+	});
+	
+	function logoutUsers(){
+		localStorage.clear();
+	}
+
+function logoutError(xhr){
+	console.log("error",xhr);
+}
+
+
 	const viewData=new Movies();
 	viewData.getMovies()
 	.then(createMovieList)
@@ -101,6 +119,10 @@ function Onloaded(){
 		const movieAdded = new Movie();
 		movieAdded.addMovie(movieAddData);
 	})
+	
+function CreateMovieListError(xhr){
+	console.log("error",xhr);
+}
 	
 	function CreateMovieListError(xhr){
 		console.log("error",xhr);

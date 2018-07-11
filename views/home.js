@@ -96,12 +96,14 @@ function Onloaded(){
 		const title = document.querySelector("[name='titleCreate']").value;
 		const year = document.querySelector("[name='yearCreate']").value;
 		const type = document.querySelector("[name='typeCreate']").value;
+		const genre = document.querySelector("[name='genreCreate']").value;
 		const imageUrl = document.querySelector("[name='posterCreate']").value;
 
 
 		const movieAddData = {
 			Title:title,
 			Year:year,
+			Genre:genre,
 			Type:type,
 			Poster:imageUrl,
 		}
@@ -132,8 +134,6 @@ function Onloaded(){
 
 let token = localStorage.getItem("loginToken");
 console.log("global token = ", token);
-
-
 
  $( function() {
     $( "#login" ).dialog({

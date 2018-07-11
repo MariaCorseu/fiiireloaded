@@ -3,6 +3,24 @@ window.onload=Onloaded;
 
 
 function Onloaded(){
+const logoutUser=new User();
+	const logoutButton=document.getElementById('logout-button');
+	logoutButton.addEventListener('click',(e)=>{
+		e.preventDefault();
+		logoutUser.SendLogoutData()
+		.then(logoutUsers)
+		.catch(logoutError);
+	});
+	
+	function logoutUsers(){
+		localStorage.clear();
+	}
+
+function logoutError(xhr){
+	console.log("error",xhr);
+}
+
+
 	const viewData=new Movies();
 	viewData.getMovies()
 	.then(createMovieList)
@@ -15,16 +33,15 @@ function Onloaded(){
 		const containElements=document.getElementById("movieListContainer");
 		
 			for(let i=0;i<viewData.itemList.length;i++){
-				const divElements=document.createElement('div');
-				divElements.classList.add('item');
-				containElements.appendChild(divElements);
-				//containElements.firstChild.classList.add('active');
 
 				const item=viewData.itemList[i];
 				//console.log(item);
 
 				const title=document.createElement("a");
-				title.setAttribute('href','file:///E:/FinalProject/fiiireloaded/pages/movieDetails.html?movieId='+item._id);
+
+				title.setAttribute('href','file://C:/final-project/fiiireloaded/pages/movieDetails.html?movieId='+item._id);
+				//title.setAttribute('href', + item._id);
+
 				title.setAttribute('target','blank');
 				title.innerHTML=item.Title+'<br>';
 
@@ -37,30 +54,24 @@ function Onloaded(){
 				const genre=document.createElement('p');
 				genre.innerHTML=item.Genre;
 
-				const runtime=document.createElement('p');
-				runtime.innerHTML=item.Runtime;
-
 				const type=document.createElement('p');
 				type.innerHTML=item.Type;
 
 				const year=document.createElement('p');
 				year.innerHTML=item.Year;
 
-				const country=document.createElement('p');
-				country.innerHTML=item.Country;
-
 				const button=document.createElement('button');
 				button.setAttribute('data-id',item._id);
 				button.innerText="Delete";
 
-				divElements.appendChild(picture);
-				divElements.appendChild(title);
-				divElements.appendChild(country);
-				divElements.appendChild(genre);
-				divElements.appendChild(type);
-				divElements.appendChild(year);
-				divElements.appendChild(runtime);
-				divElements.appendChild(button);
+				containElements.appendChild(picture);
+				containElements.appendChild(title);
+				containElements.appendChild(genre);
+				containElements.appendChild(type);
+				containElements.appendChild(year);
+				containElements.appendChild(button);
+
+				
 			}
 		}
 		//Log In functionality
@@ -75,8 +86,8 @@ function Onloaded(){
 				username:userName,
 				password:password,
 			};
-			const currentUserLogin = new User(dataUser); 
-			console.log(currentUserLogin);
+			const currentUserLogin = new User(); 
+			//console.log(currentUserLogin);
 			currentUserLogin.sendLoginData(dataUser).then((response) => {
 				console.log(response);
 				let accessToken = response.accessToken;
@@ -112,6 +123,10 @@ function Onloaded(){
 		movieAdded.addMovie(movieAddData);
 	})
 	
+function CreateMovieListError(xhr){
+	console.log("error",xhr);
+}
+	
 	function CreateMovieListError(xhr){
 		console.log("error",xhr);
 	}
@@ -133,7 +148,7 @@ function Onloaded(){
 }
 
 let token = localStorage.getItem("loginToken");
-console.log("global token = ", token);
+// console.log("global token = ", token);
 
  $( function() {
     $( "#login" ).dialog({

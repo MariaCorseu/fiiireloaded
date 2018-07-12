@@ -36,6 +36,12 @@ body {
     overflow:auto;
 }
 
+#contain {
+    display:flex;
+    justify-content:
+    flex-direction:row;
+}
+
 footer {
     position: fixed;
     left: 0;
@@ -48,7 +54,4 @@ footer {
     color: black;
     font-style: 
 
-.item {
-    display:block;
-}
 

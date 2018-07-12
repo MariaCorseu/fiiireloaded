@@ -3,7 +3,7 @@ window.onload=Onloaded;
 
 
 function Onloaded(){
-const logoutUser=new User();
+	const logoutUser=new User();
 	const logoutButton=document.getElementById('logout-button');
 	logoutButton.addEventListener('click',(e)=>{
 		e.preventDefault();
@@ -16,9 +16,9 @@ const logoutUser=new User();
 		localStorage.clear();
 	}
 
-function logoutError(xhr){
+	function logoutError(xhr){
 	console.log("error",xhr);
-}
+	}
 
 
 	const viewData=new Movies();
@@ -38,8 +38,8 @@ function logoutError(xhr){
 				//console.log(item);
 
 				const title=document.createElement("a");
-				title.setAttribute('href','file://C:/final-project/fiiireloaded/pages/movieDetails.html?movieId='+item._id);
-				//title.setAttribute('href', + item._id);
+
+				title.setAttribute('href','file:///C:/final-project/fiiireloaded/pages/movieDetails.html?movieId='+item._id);
 
 				title.setAttribute('target','blank');
 				title.innerHTML=item.Title+'<br>';
@@ -111,59 +111,56 @@ function logoutError(xhr){
 				console.log("LOCAL STORAGE TOKEN = ",localStorage.loginToken);
 			})
 		//la logare sa apara butoanele de edit, delete, create.(daca nu e tokenul in locale storage sa fie butoanele hide)
-	})
+		})
 
 
-	//Add Movie 
-	const addMovieButton = document.querySelector("[name='addMovie']");
-	//console.log(addMovieButton);
-	addMovieButton.addEventListener("click", (event) => {
-		//console.log(event.target);
-		const title = document.querySelector("[name='titleCreate']").value;
-		const year = document.querySelector("[name='yearCreate']").value;
-		const type = document.querySelector("[name='typeCreate']").value;
-		const genre = document.querySelector("[name='genreCreate']").value;
-		const imageUrl = document.querySelector("[name='posterCreate']").value;
+		//Add Movie 
+		const addMovieButton = document.querySelector("[name='addMovie']");
+		//console.log(addMovieButton);
+		addMovieButton.addEventListener("click", (event) => {
+			//console.log(event.target);
+			const title = document.querySelector("[name='titleCreate']").value;
+			const year = document.querySelector("[name='yearCreate']").value;
+			const type = document.querySelector("[name='typeCreate']").value;
+			const genre = document.querySelector("[name='genreCreate']").value;
+			const imageUrl = document.querySelector("[name='posterCreate']").value;
 
 
-		const movieAddData = {
-			Title:title,
-			Year:year,
-			Genre:genre,
-			Type:type,
-			Poster:imageUrl,
-		}
+			const movieAddData = {
+				Title:title,
+				Year:year,
+				Genre:genre,
+				Type:type,
+				Poster:imageUrl,
+			}
 
-		const movieAdded = new Movie();
-		movieAdded.addMovie(movieAddData);
-	})
-	
-function CreateMovieListError(xhr){
-	console.log("error",xhr);
-}
-	
+			const movieAdded = new Movie();
+			movieAdded.addMovie(movieAddData);
+		})
+		
+		//register new user
+		const registerBtn = document.getElementById('signupbtn');
+		//console.log(registerBtn);
+		registerBtn.addEventListener("click", (event) => {
+			event.preventDefault();
+			const usernameRegister = document.querySelector('[name="username"]').value;	
+			const passwordRegister = document.querySelector('[name="pswR"]').value;
+			const dataRegister = {
+				username:usernameRegister,
+				password:passwordRegister,
+			};
+			const userRegister = new User();
+			userRegister.registerData(dataRegister);
+		})
+	}
+
 	function CreateMovieListError(xhr){
 		console.log("error",xhr);
 	}
 
-	//register new user
-	const registerBtn = document.getElementById('signupbtn');
-	//console.log(registerBtn);
-	registerBtn.addEventListener("click", (event) => {
-		event.preventDefault();
-		const usernameRegister = document.querySelector('[name="username"]').value;	
-		const passwordRegister = document.querySelector('[name="pswR"]').value;
-		const dataRegister = {
-			username:usernameRegister,
-			password:passwordRegister,
-		};
-		const userRegister = new User();
-		userRegister.registerData(dataRegister);
-	})
-}
 
 let token = localStorage.getItem("loginToken");
-console.log("global token = ", token);
+// console.log("global token = ", token);
 
  $( function() {
     $( "#login" ).dialog({
@@ -176,12 +173,11 @@ console.log("global token = ", token);
         effect: "explode",
         duration: 1000
       }
-    });
+	});
  
-    $( "#opener" ).on( "click", function() {
+$( "#opener" ).on( "click", function() {
       $( "#login" ).dialog( "open" );
-    });
-  } );
+	});
 
  $( function() {
     $( "#register" ).dialog({
@@ -195,11 +191,12 @@ console.log("global token = ", token);
         duration: 1000
       }
     });
+});
  
-    $( "#openerReg" ).on( "click", function() {
+$( "#openerReg" ).on( "click", function() {
       $( "#register" ).dialog( "open" );
     });
-  } );
+  
 
  $( function() {
     $( "#addMovieContainer" ).dialog({
@@ -212,9 +209,10 @@ console.log("global token = ", token);
         effect: "explode",
         duration: 1000
       }
-    });
+	});
+});
  
-    $( "#openerAdd" ).on( "click", function() {
+$( "#openerAdd" ).on( "click", function() {
       $( "#addMovieContainer" ).dialog( "open" );
     });
-  } );
+});  

@@ -20,22 +20,22 @@ class Movie {
   }
   
  addMovie(data) {
-  return $.ajax(dapiUrl, {
-    headers: {
-      'X-Auth-Token' : token
-    },
-    method:"POST",
-    data: data,
-    success:(response) => {
-      console.log(response);
-      alert("Movie was succesfully added!");
-      location.reload(true);
-    },
-    error:(xhr) => {
-      const parsedMessage = JSON.parse(xhr.responseText);
-      alert('STATUS ' + xhr.status + '. ' + parsedMessage.message);
-    }
-  })
+    return $.ajax(dapiUrl, {
+      headers: {
+        'X-Auth-Token' : token
+      },
+      method:"POST",
+      data: data,
+      success:(response) => {
+        console.log(response);
+        alert("Movie was succesfully added!");
+        location.reload(true);
+      },
+      error:(xhr) => {
+        const parsedMessage = JSON.parse(xhr.responseText);
+        alert('STATUS ' + xhr.status + '. ' + parsedMessage.message);
+      }
+    })
   }
 
   deleteMovie(id) {

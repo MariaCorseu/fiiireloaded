@@ -39,7 +39,7 @@ function Onloaded(){
 
 				const title=document.createElement("a");
 
-				title.setAttribute('href','file:///E:/FinalProject/fiiireloaded/pages/movieDetails.html?movieId='+item._id);
+				title.setAttribute('href','file:///C:/final-project/fiiireloaded/pages/movieDetails.html?movieId='+item._id);
 
 				title.setAttribute('target','blank');
 				title.innerHTML=item.Title+'<br>';
@@ -61,6 +61,7 @@ function Onloaded(){
 
 				const button=document.createElement('button');
 				button.setAttribute('data-id',item._id);
+				button.classList.add('remove');
 				button.innerText="Delete";
 
 				containElements.appendChild(picture);
@@ -70,8 +71,23 @@ function Onloaded(){
 				containElements.appendChild(year);
 				containElements.appendChild(button);
 
+
+				
 				
 			}
+			//delete function should be outside the for cycle
+			$("#movieListContainer").delegate('.remove','click',function (){
+					const id=this.getAttribute('data-id');
+					//console.log(id);
+					const deleteMovie=new Movie();
+					deleteMovie.deleteMovie(id)
+					.then(function(){
+						console.log('success');
+					})
+					.catch(function(xhr){
+						console.log('Error!:',xhr);
+					});
+				});
 		}
 		//Log In functionality
 		//Submit button

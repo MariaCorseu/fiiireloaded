@@ -40,7 +40,6 @@ function logoutError(xhr){
 				const title=document.createElement("a");
 
 				title.setAttribute('href','file:///E:/FinalProject/fiiireloaded/pages/movieDetails.html?movieId='+item._id);
-				//title.setAttribute('href', + item._id);
 
 				title.setAttribute('target','blank');
 				title.innerHTML=item.Title+'<br>';
@@ -123,14 +122,6 @@ function logoutError(xhr){
 		movieAdded.addMovie(movieAddData);
 	})
 	
-function CreateMovieListError(xhr){
-	console.log("error",xhr);
-}
-	
-	function CreateMovieListError(xhr){
-		console.log("error",xhr);
-	}
-
 	//register new user
 	const registerBtn = document.getElementById('signupbtn');
 	//console.log(registerBtn);
@@ -146,6 +137,11 @@ function CreateMovieListError(xhr){
 		userRegister.registerData(dataRegister);
 	})
 }
+
+function CreateMovieListError(xhr){
+		console.log("error",xhr);
+	}
+
 
 let token = localStorage.getItem("loginToken");
 // console.log("global token = ", token);

@@ -40,10 +40,10 @@ body {
     overflow:auto;
 }
 
-#contain {
+#container {
     display:flex;
-    justify-content:
-    flex-direction:row;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
 footer {
@@ -56,6 +56,6 @@ footer {
     color: white;
     text-align: center;
     color: black;
-    font-style: 
-
+    font-style: normal;
+}
 

@@ -29,7 +29,11 @@ body {
 
 .img-size{
 	width:22%;
-	height:auto;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 10px;
 }
 
 .movieDetailsContainer{

@@ -61,6 +61,7 @@ function logoutError(xhr){
 
 				const button=document.createElement('button');
 				button.setAttribute('data-id',item._id);
+				button.classList.add('remove');
 				button.innerText="Delete";
 
 				containElements.appendChild(picture);
@@ -70,8 +71,23 @@ function logoutError(xhr){
 				containElements.appendChild(year);
 				containElements.appendChild(button);
 
+
+				
 				
 			}
+			//delete function should be outside the for cycle
+			$("#movieListContainer").delegate('.remove','click',function (){
+					const id=this.getAttribute('data-id');
+					//console.log(id);
+					const deleteMovie=new Movie();
+					deleteMovie.deleteMovie(id)
+					.then(function(){
+						console.log('success');
+					})
+					.catch(function(xhr){
+						console.log('Error!:',xhr);
+					});
+				});
 		}
 		//Log In functionality
 		//Submit button
